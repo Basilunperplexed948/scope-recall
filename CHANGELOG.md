@@ -7,6 +7,7 @@ All notable changes to `scope-recall` will be documented in this file.
 ### Added
 - Declared the first stable V1 release line with explicit provider identity, storage, tool, retrieval, migration, and runtime-freshness contracts in `docs/stability.md`.
 - Added V1-grade release checks for stable metadata, required documentation, wheel contents, and public-facing version consistency.
+- Kept release-tree scanning focused on `scope-recall` sources when CI clones Hermes into `.hermes-agent-src` for runtime compatibility tests.
 - Added a public README structure with badges, quick start, architecture diagram, tool quick reference, troubleshooting notes, and release-gate guidance.
 
 ### Changed

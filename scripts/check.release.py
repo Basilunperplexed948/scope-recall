@@ -22,6 +22,7 @@ ROOT = pathlib.Path(__file__).resolve().parents[1]
 PACKAGE_VERSION = "1.0.0"
 WHEEL_DATA_PREFIX = f"scope_recall-{PACKAGE_VERSION}.data/data"
 GENERATED_DIRS = {".git", "__pycache__", ".pytest_cache", ".ruff_cache", "build", "dist"}
+EXTERNAL_TEST_DIRS = {".hermes-agent-src"}
 SECRET_PATTERNS = {
     "api_key_assignment": re.compile(r"(api_key|secret|password|passwd|token)\s*=\s*['\"][A-Za-z0-9._\-+/=]{12,}['\"]", re.I),
     "bearer_literal": re.compile(r"bearer\s+[A-Za-z0-9._\-~+/=]{16,}", re.I),
@@ -99,6 +100,8 @@ def scan_tree() -> dict[str, list[str]]:
     for path in ROOT.rglob("*"):
         rel = path.relative_to(ROOT)
         if ".git" in rel.parts:
+            continue
+        if any(part in EXTERNAL_TEST_DIRS for part in rel.parts):
             continue
         if any(part in GENERATED_DIRS for part in rel.parts):
             if path.exists():

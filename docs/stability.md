@@ -1,6 +1,6 @@
 # Scope Recall V1 stability contract
 
-`scope-recall` 1.0.1 is the first stable release line for the Hermes Scope Recall memory provider.
+`scope-recall` 1.1.0 is the memory-quality governance release for the Hermes Scope Recall memory provider V1 line.
 
 This document defines what V1 commits to keep stable, what may evolve in minor releases, and what remains explicitly outside the V1 compatibility promise.
 

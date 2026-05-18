@@ -18,7 +18,7 @@ Current-turn recall · Permanent shared memory · Local scratch scopes · SQLite
 
 `scope-recall` is a Hermes local memory provider built for **current-turn recall** and **permanent semantic memory**. Durable user/project/ops/memory facts are shared across windows/chats for the same user + agent identity; raw general turn captures stay local to the current chat/thread/session.
 
-Version `1.0.1` is the first stable V1 release line for the documented interfaces, packaged as a public release candidate for broader field testing. The V1 compatibility contract is documented in [`docs/stability.md`](docs/stability.md).
+Version `1.1.0` is the memory-quality governance release for the documented V1 interfaces, packaged as a public release candidate for broader field testing. It keeps the V1 compatibility contract in [`docs/stability.md`](docs/stability.md) while adding conservative capture hygiene, write receipts, curated-memory controls, and stable import fingerprints.
 
 It uses a **two-layer design**:
 

@@ -287,7 +287,7 @@ def test_vector_upsert_failure_marks_needs_repair_without_losing_sqlite_row(tmp_
 
 
 def test_default_runtime_falls_back_to_local_hash_when_api_embedder_is_unavailable(tmp_path, monkeypatch):
-    for name in ("OPENAI_API_KEY", "GOOGLE_API_KEY", "GEMINI_BASE_URL", "OPENAI_BASE_URL"):
+    for name in ("SCOPE_RECALL_GEMINI_EMBEDDING_API_KEY", "OPENAI_API_KEY", "GOOGLE_API_KEY", "GEMINI_BASE_URL", "OPENAI_BASE_URL"):
         monkeypatch.delenv(name, raising=False)
 
     plugin = load_memory_provider("scope-recall")

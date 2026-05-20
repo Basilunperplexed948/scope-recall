@@ -59,8 +59,7 @@ DEFAULT_CONFIG: dict[str, Any] = {
             "provider": "openai-compatible",
             "dimensions": 3072,
             "model": "gemini-embedding-001",
-            "api_key_env": ["OPENAI_API_KEY", "GOOGLE_API_KEY"],
-            "base_url_env": ["GEMINI_BASE_URL", "OPENAI_BASE_URL"],
+            "api_key_env": ["SCOPE_RECALL_GEMINI_EMBEDDING_API_KEY"],
             "base_url": "https://generativelanguage.googleapis.com/v1beta/openai",
         },
         "fallback_embedder": {

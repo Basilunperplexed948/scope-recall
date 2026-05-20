@@ -255,13 +255,13 @@ If LanceDB delete/upsert fails, SQLite remains authoritative and the provider ma
 
 Full rebuild is no longer the default init path. For deep maintenance or release-grade storage hygiene, run `scripts/repair.vector_index.py` to rebuild the LanceDB companion from SQLite truth with an automatic backup.
 
-### Remaining cleanup after reviewer signoff
+### Operational follow-up outside source readiness
 
-After final review:
+Source-tree readiness and public documentation are separate from live deployment. Operators still need to:
 
-- decide whether the old `lancepro` shim stays for one release or is archived immediately
-- run human-triggered live gateway smoke verification under the real service path
-- package the standalone repo layout for GitHub publish if it is split out of the local profile
+- decide when to remove the deprecated `lancepro` shim in a later, explicitly announced release
+- restart or reload the target Hermes service after installing a new checkout
+- run a live runtime smoke test under the intended service profile before claiming gateway freshness
 
 ## Tool exposure
 

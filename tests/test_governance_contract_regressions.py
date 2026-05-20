@@ -213,27 +213,23 @@ def test_scope_id_uses_length_framing_to_prevent_delimiter_collisions():
 
 
 def test_operator_dedupe_scope_only_false_covers_all_scopes(tmp_path):
-    provider_a = _provider(tmp_path, config={"maintenance_tools_enabled": True})
-    provider_b = _provider(tmp_path, chat_id="chat-b", config={"maintenance_tools_enabled": True})
+    provider_a = _provider(tmp_path, config={"maintenance_tools_enabled": True, "vector": {"enabled": False}})
+    provider_b = _provider(tmp_path, chat_id="chat-b", config={"maintenance_tools_enabled": True, "vector": {"enabled": False}})
 
     try:
         for provider in (provider_a, provider_b):
-            provider._store_now(
-                content="duplicate operator cleanup note",
-                source="legacy",
-                target="general",
-                session_id="legacy",
-                allow_duplicate=True,
-                semantic_merge=False,
-            )
-            provider._store_now(
-                content="duplicate operator cleanup note",
-                source="legacy",
-                target="general",
-                session_id="legacy",
-                allow_duplicate=True,
-                semantic_merge=False,
-            )
+            for _ in range(2):
+                memory_id, inserted, outcome = provider._store_now(
+                    content="duplicate operator cleanup note",
+                    source="legacy",
+                    target="general",
+                    session_id="legacy",
+                    allow_duplicate=True,
+                    semantic_merge=False,
+                )
+                assert memory_id
+                assert inserted is True
+                assert outcome == "stored"
 
         before = json.loads(provider_a.handle_tool_call("scope_recall_dedupe", {"dry_run": True, "scope_only": False}))
         result = json.loads(provider_a.handle_tool_call("scope_recall_dedupe", {"dry_run": False, "scope_only": False}))

